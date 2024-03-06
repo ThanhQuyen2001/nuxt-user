@@ -95,8 +95,8 @@ export default {
       isOpenMobile: false,
     }
   },
-  created() {
-    this.getMenu()
+  async fetch() {
+    await this.getMenu()
   },
   methods: {
     ...mapActions('menu', ['ListMenu']),

@@ -1,10 +1,11 @@
 import api from '@/api'
 export default {
   actions: {
-    async ListMenu() {
+    async ListRuralNetworks() {
       const response = await this.$axios({
         method: 'GET',
-        url: api.ListMenu,
+        url: api.ListRuralNetworks,
+        params: { length: 10000 },
       })
       return response.data
     },

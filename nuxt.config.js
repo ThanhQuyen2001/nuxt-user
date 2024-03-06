@@ -3,8 +3,12 @@ export default {
   target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
+  loading: {
+    color: 'blue',
+    height: '5px',
+  },
   head: {
-    title: 'xtm-user',
+    title: 'Xã Thông Minh',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,7 +22,12 @@ export default {
   css: ['~/assets/css/font-family.css', 'boxicons/css/boxicons.min.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/globalVariables.js',
+    '~/plugins/router.js',
+    '~/plugins/axios.js',
+    { src: '~/plugins/maps.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -51,11 +60,12 @@ export default {
       lang: 'en',
     },
   },
+  transpile: [/^vue2-google-maps($|\/)/],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
     hostApi: process.env.HOST_API,
-    hostCMS: process.env.HOST_CMS
-  }
+    hostCMS: process.env.HOST_CMS,
+  },
 }
