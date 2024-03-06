@@ -4,7 +4,8 @@ const config = {
   host_cms: process.env.hostCMS,
   api: process.env.hostApi,
 
-  GetWard: '/api/web/wards-slug/{slug}',
+  GetWard: '/api/web/contact/{slug}',
+  // GetWard: '/api/web/wards-slug/{slug}',
   // Home banner
   ListBanners: '/api/web/configs/main-banner-images',
   GetBanner: '/api/user/banners/{id}',
