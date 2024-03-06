@@ -15,6 +15,11 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# Add file .env
+$ HOST_WEB=https://xathongminh.com
+$ HOST_API=https://xathongminh.com
+# HOST_CMS=https://cms.xathongminh.com
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
