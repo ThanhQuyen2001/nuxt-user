@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div>
-      <TopBar></TopBar>
-    </div>
-    <div>
-      <TopNav></TopNav>
-    </div>
-  </div>
+	<div>
+		<div>
+			<TopBar></TopBar>
+		</div>
+		<div>
+			<TopNav></TopNav>
+		</div>
+	</div>
 </template>
