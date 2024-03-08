@@ -33,7 +33,7 @@ export default {
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
-	css: ['~/assets/css/font-family.css', 'boxicons/css/boxicons.min.css'],
+	css: ['~/assets/css/custom.css','~/assets/css/font-family.css', 'boxicons/css/boxicons.min.css'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [

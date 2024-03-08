@@ -43,6 +43,7 @@ import VueSlickCarousel from 'vue-slick-carousel'
 export default {
 	name: 'ChiTietTinTuc',
 	components: { VueSlickCarousel },
+	scrollToTop: true,
 	data() {
 		return {
 			entry: {
@@ -83,7 +84,7 @@ export default {
 	},
 	async fetch() {
 		await this.getNews()
-		this.getListNews()
+		await this.getListNews()
 	},
 	head() {
 		return {
