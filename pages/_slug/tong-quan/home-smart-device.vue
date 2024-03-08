@@ -23,10 +23,11 @@
 						>
 							<div class="h-[130px] sm:h-[170px] overflow-hidden">
 								<img
+									draggable="false"
 									loading="lazy"
 									:src="$addPrefixImage(item.images[0])"
 									alt="Hình ảnh"
-									class="object-cover w-full h-full rounded-sm hover:scale-105 cursor-pointer transition-all ease-in-out"
+									class="object-cover w-full h-full rounded-sm hover:scale-105 cursor-pointer transition-all ease-in-out duration-500"
 								/>
 							</div>
 							<div class="p-2">

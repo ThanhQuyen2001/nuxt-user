@@ -16,5 +16,6 @@ module.exports = {
 		'no-console': 0,
 		'vue/valid-v-slot': 0,
 		'vue/first-attribute-linebreak': 0,
+		'vue/no-v-html': 0,
 	},
 }

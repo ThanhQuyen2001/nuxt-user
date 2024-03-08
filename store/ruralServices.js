@@ -9,10 +9,10 @@ export default {
 			})
 			return response.data
 		},
-		async GetRuralServicesDetail(_, ServicesId) {
+		async GetRuralService(_, ServicesId) {
 			const response = await this.$axios({
 				method: 'GET',
-				url: api.params('GetRuralServicesDetail', { id: ServicesId }),
+				url: api.params('GetRuralService', { id: ServicesId }),
 			})
 			return response.data
 		},

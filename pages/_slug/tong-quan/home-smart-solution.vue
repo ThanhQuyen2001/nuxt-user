@@ -23,6 +23,7 @@
 					>
 						<div :class="{ 'grid grid-cols-12': index !== 0 }">
 							<div
+								class="overflow-hidden cursor-pointer"
 								:class="{
 									'h-[300px]': index === 0,
 									'h-auto': index !== 0,
@@ -33,7 +34,7 @@
 									loading="lazy"
 									:src="$addPrefixImage(entry?.image)"
 									alt="thumbnail"
-									class="w-full h-full object-cover"
+									class="w-full h-full object-cover hover:scale-105 transition-all duration-500"
 								/>
 							</div>
 							<div
@@ -54,7 +55,7 @@
 									{{ entry?.description }}
 								</div>
 								<div
-									class="text-[#44B97C] text-[15px] font-medium"
+									class="text-[#44B97C] text-[15px] font-medium cursor-pointer"
 								>
 									Xem chi tiết
 								</div>

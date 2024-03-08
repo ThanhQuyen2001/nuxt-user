@@ -34,4 +34,7 @@ export default ({ app }, inject) => {
 
 	inject('filters', filters)
 	app.filters = filters
+
+	inject('slug', app.context.store.state.location.location.slug)
+	app.slug = app.context.store.state.location.location.slug
 }

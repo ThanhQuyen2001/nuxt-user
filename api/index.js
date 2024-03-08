@@ -20,7 +20,7 @@ const config = {
 	SmartDeviceType: '/api/web/smart-device-types',
 
 	ListNews: '/api/web/articles',
-	GetNews: '/api/web/articles/{id}',
+	GetNews: '/api/web/slug-article/{slug}',
 
 	ListArticleTypes: '/api/web/article-category',
 
@@ -31,7 +31,7 @@ const config = {
 	GetSmartSolutionHome: '/api/web/home-smart-solutions',
 
 	ListRuralServices: '/api/web/rural-digital-services',
-	GetRuralServicesDetail: '/api/web/rural-digital-services/{id}',
+	GetRuralService: '/api/web/rural-digital-services/{id}',
 
 	ListServiceManagements: '/api/web/service-management',
 

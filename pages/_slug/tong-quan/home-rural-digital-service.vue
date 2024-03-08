@@ -7,14 +7,14 @@
 					:categories="categories"
 					:view-all="true"
 					@viewAll="
-						$router.push({ name: 'web.rural-digital-services' })
+						$router.push({ path: `/${$slug}/dich-vu-so-nong-thon` })
 					"
 					@update="update"
 				/>
 			</template>
 
 			<template v-if="entry" #content>
-				<div class="grid grid-cols-2 cursor-pointer">
+				<div class="grid grid-cols-2 cursor-pointer" @click="$router.push({path: `/${$slug}/dich-vu-so-nong-thon/${entry.id}`})">
 					<div>
 						<div class="text-[22px] text-[#4f4f4f] font-bold mb-2">
 							{{ entry.name }}

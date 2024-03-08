@@ -41,7 +41,7 @@ export default {
 		'~/plugins/router.js',
 		'~/plugins/axios.js',
 		{ src: '~/plugins/maps.js', mode: 'client' },
-		'~/plugins/carousel.js'
+		'~/plugins/carousel.js',
 	],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components

@@ -60,6 +60,22 @@ export default {
 		HomeVideo,
 		HomeSmartSolution,
 	},
+	head() {
+		return {
+			title: `${this.$store.state.location.location.name}`,
+			meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: `${this.$store.state.location.location.name}`,
+				},
+				{
+					name: 'keywords',
+					content: `${this.$store.state.location.location.name}`,
+				},
+			],
+		}
+	},
 	computed: {
 		...mapGetters('location', ['GetLocation']),
 	},

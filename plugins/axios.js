@@ -18,7 +18,7 @@ export default function ({ $axios, store }) {
 			return config
 		},
 		(error) => {
-			return Promise.reject(error)
+			return error
 		}
 	)
 
@@ -27,7 +27,7 @@ export default function ({ $axios, store }) {
 			return response
 		},
 		(error) => {
-			return Promise.reject(error)
+			return error
 		}
 	)
 }

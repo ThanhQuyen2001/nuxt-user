@@ -4,7 +4,7 @@
 			<template #category>
 				<home-header-category
 					title="TIN TỨC"
-					@viewAll="$router.push({ path: '/news/list' })"
+					@viewAll="$router.push({ path: `/${$slug}/tin-tuc` })"
 				/>
 			</template>
 
@@ -17,14 +17,7 @@
 							v-for="(article, index) in articles"
 							:key="index"
 							:class="{ 'col-span-2 sm:col-span-1': index === 2 }"
-							@click="
-								$router.push({
-									name: 'web.slug.news.detail',
-									params: {
-										id: article.id,
-									},
-								})
-							"
+							@click="goDetailNews(article)"
 						>
 							<div
 								class="h-[140px] sm:h-[160px] md:h-[200px] xl:h-[260px] mb-4"
@@ -33,7 +26,7 @@
 								<img
 									loading="lazy"
 									alt="Hình ảnh"
-									class="object-cover w-full h-full rounded-sm hover:scale-105 transition-all ease-in-out duration-200 cursor-pointer"
+									class="object-cover w-full h-full rounded-md hover:scale-105 transition-all ease-in-out duration-500 cursor-pointer"
 									:src="$addPrefixImage(article?.thumbnail)"
 								/>
 							</div>
@@ -94,6 +87,9 @@ export default {
 			this.articles = response.data.entries.filter(
 				(_, index) => index < this.NEWS_LENGTH
 			)
+		},
+		goDetailNews(entry) {
+			this.$router.push({ path: `/${this.$slug}/tin-tuc/${entry.slug}` })
 		},
 	},
 }

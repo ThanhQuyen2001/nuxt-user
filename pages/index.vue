@@ -6,7 +6,7 @@
 export default {
 	name: 'IndexPage',
 	mounted() {
-		this.$router.push({ name: 'slug-home' })
+		this.$router.push({ path: `/${this.$slug}/tong-quan` })
 	},
 }
 </script>

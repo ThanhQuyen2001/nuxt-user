@@ -10,11 +10,11 @@ export default {
 			})
 			return response.data
 		},
-		async GetNews(_, newsId) {
-			if (newsId === undefined) return
+		async GetNews(_, slug) {
+			if (slug === undefined) return
 			const response = await this.$axios({
 				method: 'GET',
-				url: api.params('GetNews', { id: newsId }),
+				url: api.params('GetNews', { slug }),
 			})
 			return response.data
 		},

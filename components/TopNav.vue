@@ -143,7 +143,7 @@ export default {
 		},
 		setMenu() {
 			if (
-				this.$route.params.slug !== 'admin' &&
+				this.$route.params.slug !== 'xathongminh' &&
 				this.$route.params.slug
 			) {
 				this.menu = this.entries.find(
