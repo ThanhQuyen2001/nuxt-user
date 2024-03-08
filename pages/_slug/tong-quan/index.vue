@@ -70,6 +70,10 @@ export default {
 					content: `${this.$store.state.location.location.name}`,
 				},
 				{
+					name: 'viewport',
+					content: 'width=device-width, initial-scale=1',
+				},
+				{
 					name: 'keywords',
 					content: `${this.$store.state.location.location.name}`,
 				},

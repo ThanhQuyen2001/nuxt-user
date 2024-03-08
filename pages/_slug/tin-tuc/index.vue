@@ -1,28 +1,16 @@
 <template>
 	<div>
 		<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-			<div
-				v-for="(entry, index) in entries"
-				:key="index"
-				@click="goDetailNews(entry)"
-			>
+			<div v-for="(entry, index) in entries" :key="index" @click="goDetailNews(entry)">
 				<div>
 					<div class="h-[150px] mb-1">
-						<img
-							loading="lazy"
-							:src="$addPrefixImage(entry?.thumbnail)"
-							alt="Hinh anh"
-							class="w-full h-full object-cover rounded-md hover:scale-105 transition-all ease-in-out duration-500 cursor-pointer"
-						/>
+						<img loading="lazy" :src="$addPrefixImage(entry?.thumbnail)" alt="Hinh anh"
+							class="w-full h-full object-cover rounded-md hover:scale-105 transition-all ease-in-out duration-500 cursor-pointer" />
 					</div>
 					<div>
-						<b
-							class="line-clamp-3 sm:line-clamp-2 text-[12px] sm:text-[16px] text-[#4f4f4f]"
-							>{{ entry.title }}</b
-						>
-						<div
-							class="hidden sm:block overflow-hidden text-[12px] text-[#4f4f4f]"
-						>
+						<b class="line-clamp-3 sm:line-clamp-2 text-[12px] sm:text-[16px] text-[#4f4f4f]">{{ entry.title
+							}}</b>
+						<div class="hidden sm:block overflow-hidden text-[12px] text-[#4f4f4f]">
 							<div class="line-clamp-2">
 								{{ $filters.htmlToText(entry.content) }}
 							</div>
@@ -68,6 +56,10 @@ export default {
 					hid: 'description',
 					name: 'description',
 					content: `${this.$store.state.location.location.name} - Danh Sách Bài Viết`,
+				},
+				{
+					name: 'viewport',
+					content: 'width=device-width, initial-scale=1',
 				},
 				{
 					name: 'keywords',

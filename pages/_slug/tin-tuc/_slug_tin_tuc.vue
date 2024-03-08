@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div>
-			<h3 class="text-[26px] font-medium uppercase text-[#4f4f4f]">
+			<h3 class="text-[20px] font-medium uppercase text-[#4f4f4f]">
 				{{ entry.title }}
 			</h3>
 			<div class="my-2">
@@ -16,17 +16,10 @@
 			<VueSlickCarousel v-bind="settings">
 				<div v-for="(item, i) in entries" :key="i" class="p-2" @click="goDetailNews(item)">
 					<div class="h-[120px] sm:h-[180px] cursor-pointer mb-1">
-						<img
-							draggable="false"
-							loading="lazy"
-							:src="$addPrefixImage(item.thumbnail)"
-							alt="Hinh anh"
-							class="w-full h-full object-cover rounded-md transition-all hover:scale-105 duration-500"
-						/>
+						<img draggable="false" loading="lazy" :src="$addPrefixImage(item.thumbnail)" alt="Hinh anh"
+							class="w-full h-full object-cover rounded-md transition-all hover:scale-105 duration-500" />
 					</div>
-					<div
-						class="text-[12px] sm:text-[14px] color-[#4f4f4f] uppercase line-clamp-2 font-bold mb-1"
-					>
+					<div class="text-[12px] sm:text-[14px] color-[#4f4f4f] uppercase line-clamp-2 font-bold mb-1">
 						{{ item.title }}
 					</div>
 					<div class="text-[12px] sm:text-[14px] color-[#4f4f4f]">
@@ -95,6 +88,10 @@ export default {
 					name: 'description',
 					content: `${this.entry.title}`,
 				},
+				{
+					name: 'viewport',
+					content: 'width=device-width, initial-scale=1',
+				},
 				{ name: 'keywords', content: `${this.entry.title}` },
 			],
 		}
@@ -110,8 +107,8 @@ export default {
 	methods: {
 		async getNews() {
 			const response = await this.$store.dispatch(
-			    'news/GetNews',
-			    this.$route.params.slug_tin_tuc
+				'news/GetNews',
+				this.$route.params.slug_tin_tuc
 			)
 			if (response?.code === 200) {
 				this.entry = response.data.entry

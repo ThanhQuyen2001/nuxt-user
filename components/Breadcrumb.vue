@@ -6,12 +6,12 @@
 			class="flex items-center"
 		>
 			<a
+				:href="item.href"
 				:class="{
 					'text-[#44B97C] pointer-events-none ': item.active,
 					'text-[#D4D4D4] hover:text-[#727272] pointer-events-auto cursor-pointer':
 						!item.active,
 				}"
-				@click.prevent="changePage(item)"
 				>{{ item.name }}</a
 			>
 			<i
@@ -31,11 +31,6 @@ export default {
 			default: () => [],
 			require: true,
 		},
-	},
-	methods: {
-		changePage(item) {
-			this.$router.push({ path: item.href })
-		},
-	},
+	}
 }
 </script>
