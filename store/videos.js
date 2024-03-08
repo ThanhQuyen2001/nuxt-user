@@ -1,12 +1,11 @@
 import api from '@/api'
-
 export default {
 	actions: {
-		async ListServiceManagements(_, options) {
+		async ListVideos(_, params) {
 			const response = await this.$axios({
 				method: 'GET',
-				url: api.ListServiceManagements,
-				params: options,
+				url: api.ListVideos,
+				params: { ...params, length: 9 },
 			})
 			return response.data
 		},

@@ -46,6 +46,7 @@ export default ({ app }) => {
 			}
 		} else {
 			app.context.store.commit('location/UpdateLocation', ADMIN_LOCATION)
+			app.context.store.commit('location/UpdateContact', ADMIN_LOCATION)
 		}
 		return next()
 	})

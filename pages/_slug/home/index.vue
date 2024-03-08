@@ -18,11 +18,14 @@
 		<div class="mb-5">
 			<HomeSmartDevice />
 		</div>
-    <div class="mb-5">
+		<div class="mb-5">
 			<HomeSmartSolution />
 		</div>
 		<div class="mb-5">
 			<HomeRuralNetwork />
+		</div>
+		<div class="mb-5">
+			<HomeVideo />
 		</div>
 		<div class="mb-5">
 			<HomeSupportService />
@@ -40,6 +43,7 @@ import HomeSmartDevice from './home-smart-device.vue'
 import HomeRuralNetwork from './home-rural-network.vue'
 import HomeSupportService from './home-support-service.vue'
 import HomeRuralDigitalService from './home-rural-digital-service.vue'
+import HomeVideo from './home-video.vue'
 import HomeSmartSolution from './home-smart-solution.vue'
 
 export default {
@@ -53,7 +57,8 @@ export default {
 		HomeRuralNetwork,
 		HomeSupportService,
 		HomeRuralDigitalService,
-    HomeSmartSolution
+		HomeVideo,
+		HomeSmartSolution,
 	},
 	computed: {
 		...mapGetters('location', ['GetLocation']),

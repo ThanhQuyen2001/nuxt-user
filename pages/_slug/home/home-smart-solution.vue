@@ -2,27 +2,60 @@
 	<div v-if="categories.length > 0" class="max-w-6xl mx-auto px-3">
 		<home-service>
 			<template #category>
-				<home-header-category title="GIẢI PHÁP THÔNG MINH" :categories="categories" :view-all="true" @viewAll="
-		$router.push({ name: 'web.slug.smart-solutions' })
-		" @update="updateEntry" />
+				<home-header-category
+					title="GIẢI PHÁP THÔNG MINH"
+					:categories="categories"
+					:view-all="true"
+					@viewAll="
+						$router.push({ name: 'web.slug.smart-solutions' })
+					"
+					@update="updateEntry"
+				/>
 			</template>
 
 			<template v-if="entries?.length" #content>
 				<div class="grid grid-cols-2 gap-4">
-					<div v-for="(entry, index) in entries" :key="index"
+					<div
+						v-for="(entry, index) in entries"
+						:key="index"
 						class="shadow-sm rounded-lg border-[1px] border-solid border-[#ccc] overflow-hidden h-fit"
-						:class="{ 'row-span-3': index === 0 }">
-						<div :class="{'grid grid-cols-12': index !== 0}">
-							<div :class="{ 'h-[300px]': index === 0, 'h-auto': index !== 0,'col-span-5': index !== 0 }">
-								<img loading="lazy" :src="$addPrefixImage(entry?.image)" alt="thumbnail"
-									class="w-full h-full object-cover" />
+						:class="{ 'row-span-3': index === 0 }"
+					>
+						<div :class="{ 'grid grid-cols-12': index !== 0 }">
+							<div
+								:class="{
+									'h-[300px]': index === 0,
+									'h-auto': index !== 0,
+									'col-span-5': index !== 0,
+								}"
+							>
+								<img
+									loading="lazy"
+									:src="$addPrefixImage(entry?.image)"
+									alt="thumbnail"
+									class="w-full h-full object-cover"
+								/>
 							</div>
-							<div class="p-3" :class="{'col-span-7': index !== 0}">
-								<b class="text-[23px] text-[#44494D] line-clamp-1">{{ entry?.name }}</b>
-								<div class="mb-1 text-[#ADB5BD]" :class="{'line-clamp-5': index === 0, 'line-clamp-3': index !== 0}">
+							<div
+								class="p-3"
+								:class="{ 'col-span-7': index !== 0 }"
+							>
+								<b
+									class="text-[23px] text-[#44494D] line-clamp-1"
+									>{{ entry?.name }}</b
+								>
+								<div
+									class="mb-1 text-[#ADB5BD]"
+									:class="{
+										'line-clamp-5': index === 0,
+										'line-clamp-3': index !== 0,
+									}"
+								>
 									{{ entry?.description }}
 								</div>
-								<div class="text-[#44B97C] text-[15px] font-medium">
+								<div
+									class="text-[#44B97C] text-[15px] font-medium"
+								>
 									Xem chi tiết
 								</div>
 							</div>
