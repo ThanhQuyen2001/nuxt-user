@@ -14,7 +14,7 @@
 				TIN TỨC KHÁC
 			</div>
 			<VueSlickCarousel v-bind="settings">
-				<div v-for="(item, i) in entries" :key="i" class="p-2">
+				<div v-for="(item, i) in entries" :key="i" class="p-2" @click="goDetailNews(item)">
 					<div class="h-[120px] sm:h-[180px] cursor-pointer mb-1">
 						<img
 							draggable="false"
@@ -40,7 +40,6 @@
 
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
-import response from './response.json'
 export default {
 	name: 'ChiTietTinTuc',
 	components: { VueSlickCarousel },
@@ -83,8 +82,8 @@ export default {
 		}
 	},
 	async fetch() {
-		this.getNews()
-		await this.getListNews()
+		await this.getNews()
+		this.getListNews()
 	},
 	head() {
 		return {
@@ -99,12 +98,20 @@ export default {
 			],
 		}
 	},
+	watch: {
+		"$route.params.slug_tim_tuc": {
+			handler() {
+				this.$fetch()
+			},
+			deep: true
+		}
+	},
 	methods: {
-		getNews() {
-			// const response = await this.$store.dispatch(
-			//     'news/GetNews',
-			//     this.$route.params.slug_tin_tuc
-			// )
+		async getNews() {
+			const response = await this.$store.dispatch(
+			    'news/GetNews',
+			    this.$route.params.slug_tin_tuc
+			)
 			if (response?.code === 200) {
 				this.entry = response.data.entry
 			}
@@ -116,6 +123,9 @@ export default {
 			this.entries = response.data.entries.filter(
 				(a) => a.slug !== this.$route.params.slug_tin_tuc
 			)
+		},
+		goDetailNews(entry) {
+			this.$router.push({ path: `/${this.$slug}/tin-tuc/${entry.slug}` })
 		},
 	},
 }

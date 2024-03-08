@@ -7,10 +7,10 @@
 			<HomeNews />
 		</div>
 		<div class="mb-5">
-			<HomeKnowledgeLibrary v-if="GetLocation.slug == 'admin'" />
+			<HomeKnowledgeLibrary v-if="GetLocation.slug === 'xathongminh'" />
 		</div>
 		<div class="mb-5">
-			<HomeRuralDigitalService v-if="GetLocation.slug != 'admin'" />
+			<HomeRuralDigitalService v-if="GetLocation.slug !== 'xathongminh'" />
 		</div>
 		<div class="mb-5">
 			<HomeDownload />
