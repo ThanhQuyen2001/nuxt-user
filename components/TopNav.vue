@@ -13,6 +13,7 @@
 						alt="logo"
 					/>
 				</div>
+				<Explore ref="explore"></Explore>
 				<div class="nav-web-name-wrapper">
 					<h1 class="nav-web-name">Xã Thông Minh</h1>
 					<div
@@ -29,7 +30,7 @@
 					<i class="bx bx-menu ic-mobile-toggle"></i>
 				</label>
 			</div>
-			<input id="ip-toggle-menu" v-model="isOpenMobile" type="checkbox" />
+			<input id="ip-toggle-menu" type="checkbox" />
 			<label class="overlay-close-menu" for="ip-toggle-menu"> </label>
 			<ul class="nav-list-wrapper-lv1">
 				<div class="nav-list-branding">
@@ -101,8 +102,6 @@ export default {
 		return {
 			menu: {},
 			entries: [],
-			isopenExplore: false,
-			isOpenMobile: false,
 		}
 	},
 	async fetch() {
@@ -111,10 +110,10 @@ export default {
 	methods: {
 		...mapActions('menu', ['ListMenu']),
 		openExplore() {
-			this.isopenExplore = true
+			this.$refs.explore.openModal()
 		},
 		closeExplore() {
-			this.isopenExplore = false
+			this.$refs.explore.closeModal()
 		},
 		hasChildren(parent) {
 			return !!parent?.children?.length
@@ -128,10 +127,8 @@ export default {
 		handleRedirect(item) {
 			if (this.isAdminUrl(item.url)) {
 				window.open(item.url, '_blank')
-				this.isOpenMobile = false
 			} else if (!this.isHashUrl(item.url)) {
 				this.$router.push({ path: item.url })
-				this.isOpenMobile = false
 			}
 		},
 		async getMenu() {

@@ -6,7 +6,7 @@
 			class="flex items-center"
 		>
 			<a
-				:href="item.href"
+				:href="`/${$slug}${item.href}`"
 				:class="{
 					'text-[#44B97C] pointer-events-none ': item.active,
 					'text-[#D4D4D4] hover:text-[#727272] pointer-events-auto cursor-pointer':
