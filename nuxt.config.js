@@ -53,6 +53,7 @@ export default {
 		'@nuxtjs/eslint-module',
 		// https://go.nuxtjs.dev/tailwindcss
 		'@nuxtjs/tailwindcss',
+		'nuxt-vue-multiselect'
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules

@@ -14,7 +14,14 @@
 			</template>
 
 			<template v-if="entry" #content>
-				<div class="grid grid-cols-2 cursor-pointer" @click="$router.push({path: `/${$slug}/dich-vu-so-nong-thon/${entry.id}`})">
+				<div
+					class="grid grid-cols-2 cursor-pointer"
+					@click="
+						$router.push({
+							path: `/${$slug}/dich-vu-so-nong-thon/${entry.id}`,
+						})
+					"
+				>
 					<div>
 						<div class="text-[22px] text-[#4f4f4f] font-bold mb-2">
 							{{ entry.name }}

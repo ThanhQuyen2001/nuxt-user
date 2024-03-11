@@ -1,15 +1,15 @@
-#__layout::-webkit-scrollbar {
-    width: 8px;
-}
-  
-#__layout::-webkit-scrollbar-track {
-background: #f1f1f1;
+html::-webkit-scrollbar {
+	width: 8px;
 }
 
-#__layout::-webkit-scrollbar-thumb {
-background: #44b97c;
+html::-webkit-scrollbar-track {
+	background: #f1f1f1;
 }
 
-#__layout::-webkit-scrollbar-thumb:hover {
-background: #227b4d;
+html::-webkit-scrollbar-thumb {
+	background: #71c499;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+	background: #29935c;
 }

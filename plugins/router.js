@@ -27,7 +27,6 @@ export default ({ app }) => {
 				'location/GetLocation',
 				slugPath
 			)
-			console.log(response,'response');
 			if (response?.code === 200) {
 				const location = response.data.entry
 				app.context.store.commit('location/UpdateLocation', location)

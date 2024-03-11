@@ -14,12 +14,24 @@
 				TIN TỨC KHÁC
 			</div>
 			<VueSlickCarousel v-bind="settings">
-				<div v-for="(item, i) in entries" :key="i" class="p-2" @click="goDetailNews(item)">
+				<div
+					v-for="(item, i) in entries"
+					:key="i"
+					class="p-2"
+					@click="goDetailNews(item)"
+				>
 					<div class="h-[120px] sm:h-[180px] cursor-pointer mb-1">
-						<img draggable="false" loading="lazy" :src="$addPrefixImage(item.thumbnail)" alt="Hinh anh"
-							class="w-full h-full object-cover rounded-md transition-all hover:scale-105 duration-500" />
+						<img
+							draggable="false"
+							loading="lazy"
+							:src="$addPrefixImage(item.thumbnail)"
+							alt="Hinh anh"
+							class="w-full h-full object-cover rounded-md transition-all hover:scale-105 duration-500"
+						/>
 					</div>
-					<div class="text-[12px] sm:text-[14px] color-[#4f4f4f] uppercase line-clamp-2 font-bold mb-1">
+					<div
+						class="text-[12px] sm:text-[14px] color-[#4f4f4f] uppercase line-clamp-2 font-bold mb-1"
+					>
 						{{ item.title }}
 					</div>
 					<div class="text-[12px] sm:text-[14px] color-[#4f4f4f]">
@@ -97,12 +109,12 @@ export default {
 		}
 	},
 	watch: {
-		"$route.params.slug_tim_tuc": {
+		'$route.params.slug_tim_tuc': {
 			handler() {
 				this.$fetch()
 			},
-			deep: true
-		}
+			deep: true,
+		},
 	},
 	methods: {
 		async getNews() {

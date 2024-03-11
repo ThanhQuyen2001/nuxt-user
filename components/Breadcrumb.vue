@@ -31,6 +31,6 @@ export default {
 			default: () => [],
 			require: true,
 		},
-	}
+	},
 }
 </script>
