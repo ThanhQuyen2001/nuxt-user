@@ -57,7 +57,7 @@ export default {
 				})
 				const slugResponse = response.data?.data?.entry?.slug
 
-				dispatch('UpdateLocationContact', slugResponse)
+				await dispatch('UpdateLocationContact', slugResponse)
 
 				return response.data
 			} catch {

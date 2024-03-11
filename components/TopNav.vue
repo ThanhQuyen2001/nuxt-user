@@ -1,6 +1,6 @@
 <template>
 	<div class="nav-wrapper">
-		<nav class="nav max-w-6xl mx-auto px-2 xl:px-0">
+		<nav class="nav max-w-6xl mx-auto px-3">
 			<div class="nav-branding-wrapper">
 				<div
 					class="nav-logo-warpper"
@@ -128,7 +128,7 @@ export default {
 			if (this.isAdminUrl(item.url)) {
 				window.open(item.url, '_blank')
 			} else if (!this.isHashUrl(item.url)) {
-				this.$router.push({ path: item.url })
+				this.$router.push({ path: `/${this.$slug}${item.url}` })
 			}
 		},
 		async getMenu() {

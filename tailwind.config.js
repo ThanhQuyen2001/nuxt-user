@@ -15,6 +15,9 @@ module.exports = {
 				roboto: ['Roboto', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
 			},
+			maxWidth: {
+				'6xl': '76rem',
+			  }
 		},
 	},
 	plugins: [],
